@@ -1,0 +1,17 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "PublicReadGetObject",
+      "Effect": "Allow",
+      "Principal": "*",
+      "Action": "s3:*",
+      "Resource": "arn:aws:s3:::vm-test-bucket-policy/*",
+      "Condition": {
+        "IpAddress": {
+          "aws:SourceIp": "Your_ip_address/32"
+        }
+      }
+    }
+  ]
+}
